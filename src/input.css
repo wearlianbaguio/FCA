@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        @apply font-raleway overflow-x-hidden;
+      }
+      .container {
+        @apply max-w-[1600px] w-full px-4 mx-auto;
+      }
+      h1 {
+        @apply text-7xl;
+      }
+      h2 {
+        @apply text-3xl;
+      }
+      h3 {
+        @apply text-2xl;
+      }
+      h4 {
+        @apply text-xl;
+      }
+      p {
+        @apply text-lg;
+      }
+      .header__nav {
+        @apply flex flex-col gap-5 h-full w-full top-[5.3rem] fixed text-center py-5 font-semibold duration-500 right-[-100%]
+        z-50;
+      }
+      .header__nav.open {
+        @apply right-0 z-50 overflow-y-hidden pt-8 font-[400] bg-white;
+      }
+      .header__nav li a {
+        @apply text-black/80;
+      }
+      .toggle__menu {
+        @apply flex flex-col gap-1 z-50 lg:hidden;
+      }
+      .toggle__menu span {
+        @apply content-["*"] bg-black w-[1.5rem] h-1 w-10 ease-out duration-700;
+      }
+    
+      .toggle__menu.open span:first-child {
+        @apply content-["*"] w-6 h-[0.45rem] rounded-lg transform translate-y-[4px] rotate-[210deg] transition ease-out duration-700 ml-4;
+      }
+      .toggle__menu.open span:nth-child(2) {
+        @apply content-["*"] w-[2.5rem] h-[0.45rem] rounded-lg transition-all ease-out;
+      }
+      .toggle__menu.open span:last-child {
+        @apply content-["*"] w-6 h-[0.45rem] rounded-lg transform translate-y-[-2.5px] rotate-[-220deg] transition ease-out duration-700 ml-4 mb-1;
+      }
+      .backdrop {
+        @apply hidden;
+      }
+      .backdrop.open {
+        @apply block fixed top-[5.3rem] left-0 h-screen w-full backdrop-brightness-50 duration-700 overflow-y-hidden;
+      }
+      .footer__down i{
+        @apply text-4xl text-slate-600;
+      }
+}
+
+@layer components {
+  .btn {
+    @apply py-[0.1rem] px-4 bg-transparent border-transparent rounded-2xl shadow-[0_8px_24px_-15px_rgba(149,157,165,0.2)] scale-100 active:scale-95;
+  }
+  .btn.bg-fb {
+    @apply bg-btnblue py-2 px-7 text-white rounded-md hover:brightness-125;
+  }
+  .btn.bg-faq {
+    @apply bg-btnyellow border border-black py-2 px-7 text-white rounded-md hover:bg-secondary;
+  }
+  
+
+  .slip__item {
+    @apply mb-5;
+  }
+  .slip__item i{
+    @apply ml-auto;
+  }
+  .slip__tabs h3.active {
+    @apply underline text-secondary;
+  }
+  .slip__item h4,
+  .slip__item i {
+    @apply bg-primary text-black px-3 py-2 font-semibold cursor-pointer duration-500 delay-150 transition-all flex flex-row ;
+  }
+  .slip__item span {
+    @apply max-md:hidden;
+  }
+  .slip__item p {
+    @apply bg-slate-50 h-auto max-h-0 overflow-hidden ease-in-out text-justify px-3 duration-500 delay-100 transition-all;
+  }
+  .slip__item i {
+    @apply inline-block px-0;
+  }
+  .slip__item i.open {
+    @apply rotate-[-180deg] duration-500 delay-150 transition-all;
+  }
+  .slip__item p.open {
+    @apply max-h-[50rem] bg-slate-50 p-3 duration-500 delay-100 transition-all;
+  }
+  .slip__details {
+    @apply flex flex-col flex-wrap items-start; 
+  }
+  .slip__details h3{
+    @apply font-semibold py-[3rem];
+  }
+  .slip__details {
+    @apply hidden;
+  }
+  .slip__details.active {
+    @apply block px-[1rem];
+  }
+  .slip__tabs h3 {
+    @apply lg:max-w-[10rem];
+  }
+}
+
+@layer utilities {}
