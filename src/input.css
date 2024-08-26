@@ -89,7 +89,7 @@
     @apply bg-primary text-black px-3 py-2 font-semibold cursor-pointer duration-500 delay-150 transition-all flex flex-row ;
   }
   .slip__item span {
-    @apply max-md:hidden;
+    @apply max-md:hidden text-secondary;
   }
   .slip__item p {
     @apply bg-slate-50 h-auto max-h-0 overflow-hidden ease-in-out text-justify px-3 duration-500 delay-100 transition-all;
@@ -100,8 +100,11 @@
   .slip__item i.open {
     @apply rotate-[-180deg] duration-500 delay-150 transition-all;
   }
+  .slip__item p i{
+    @apply text-secondary;
+  }
   .slip__item p.open {
-    @apply max-h-[50rem] bg-slate-50 p-3 duration-500 delay-100 transition-all;
+    @apply max-h-[50rem] bg-slate-50 p-3 duration-500 delay-100 transition-all lg:leading-8;
   }
   .slip__details {
     @apply flex flex-col flex-wrap items-start; 
@@ -116,7 +119,7 @@
     @apply block px-[1rem];
   }
   .slip__tabs h3 {
-    @apply lg:max-w-[10rem];
+   
   }
 }
 
