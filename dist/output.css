@@ -1157,4 +1157,8 @@ p{
   .lg\:gap-8{
     gap: 2rem;
   }
+
+  .lg\:p-\[3rem\]{
+    padding: 3rem;
+  }
 }
