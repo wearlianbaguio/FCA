@@ -28,7 +28,7 @@
       }
       .header__nav {
         @apply flex flex-col gap-5 h-full w-full top-[5.3rem] fixed text-center py-5 font-semibold duration-500 right-[-100%]
-        z-50;
+        z-50  lg:flex-row lg:h-auto lg:w-[100%] lg:static lg:bg-transparent;
       }
       .header__nav.open {
         @apply right-0 z-50 overflow-y-hidden pt-8 font-[400] bg-white;
@@ -61,6 +61,9 @@
       .footer__down i{
         @apply text-4xl text-slate-600;
       }
+      .header__wrapper nav {
+        @apply lg:flex lg:flex-col-reverse;
+      }
 }
 
 @layer components {
@@ -91,7 +94,7 @@
   .slip__item span {
     @apply max-md:hidden text-secondary;
   }
-  .slip__item p {
+  .slip__item ul {
     @apply bg-slate-50 h-auto max-h-0 overflow-hidden ease-in-out text-justify px-3 duration-500 delay-100 transition-all;
   }
   .slip__item i {
@@ -103,7 +106,7 @@
   .slip__item p i{
     @apply text-secondary;
   }
-  .slip__item p.open {
+  .slip__item ul.open {
     @apply max-h-[50rem] bg-slate-50 p-3 duration-500 delay-100 transition-all lg:leading-8;
   }
   .slip__details {
@@ -117,9 +120,6 @@
   }
   .slip__details.active {
     @apply block px-[1rem];
-  }
-  .slip__tabs h3 {
-   
   }
 }
 
